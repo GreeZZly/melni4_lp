@@ -10,6 +10,20 @@
 <script src="/include/js/jquery.bxslider.min.js"></script>
 <script src="/include/js/validation/jquery.validate.min.js"></script>
 <script src="/include/js/form.js"></script>
+<script>
+	 
+	 function collapsElement(id) {
+		 if ( document.getElementById(id).style.display != "none" ) {
+		 document.getElementById(id).style.display = 'none';
+		 
+
+		 }
+		 else {
+		 document.getElementById(id).style.display = '';
+		  document.getElementsByClassName('bx-viewport').style.minHeight = 350;
+		 }
+	 }
+ </script>
 
 <!-- bxSlider CSS file -->
 <link rel="stylesheet" type="text/css" href="/include/css/jquery.bxslider.css">

@@ -104,7 +104,7 @@
 		 */
 		// first get the original window dimens (thanks alot IE)
 		var windowWidth = $(window).width();
-		var windowHeight = $(window).height();
+		/*var windowHeight = $(window).height();*/
 
 
 

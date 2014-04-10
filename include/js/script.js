@@ -18,3 +18,4 @@ $(document).ready(function(){
 	});
 	// console.log(suc_h, win_w, win_h);
 });
+

@@ -563,3 +563,15 @@ outline: none;
 #header_title {
 	text-shadow: 5px 2px 5px #CABFB5;
 }
+
+.otz .bx-viewport {
+	min-height: 720px;
+}
+
+.otz .bx-viewport_new {
+	min-height: 950px;
+}
+
+.marg_bot {
+	margin-bottom: 20px;
+}
