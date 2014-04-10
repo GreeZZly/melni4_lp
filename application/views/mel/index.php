@@ -529,12 +529,45 @@
       <div class="span3 phone_last"><h3>8(919) 660 06 79</h3></div>
       <div class="span2"></div>
       <div class="span3">
-         <form class="form-phone"> 
-              <button type="submit" class="btn-danger" id="phone_call">Заказать звонок</button>  
+         <form class="form-phone">      
+              <button type="submit" class="btn-danger" id="phone_call"  data-toggle="modal" data-target="#myModal">Заказать звонок</button>  
+             
          </form></div>
     </div>
   </div>
-  
+
+    <div class="modal hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Введите свои данные</h3>
+      </div>
+      <div class="modal-body">
+         <form class="form-horizontal" id="phone_form">
+             
+                <div class="input_form on_modal">
+                    <input type="text" id="name" placeholder="Введите Ваше имя" name="name">
+                </div>
+
+               <div class="input_form on_modal">
+                    <input type="text" id="surname" placeholder="Введите Вашу Фамилию" name="surname">
+                </div>
+
+                <div class="input_form on_modal">
+                   <input type="text" id="phone" placeholder="Введите Ваш номер телефон" name="phone">
+                </div>
+           
+            
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Закрыть</button>
+        <button class="btn btn-primary on_modal_btn">Отправить контакты</button>
+      </div>
+    </div>
+
+
+
+
  <!-- -->
  <hr>
  <div class="silver_block"> 
@@ -550,4 +583,3 @@
 </div> 
 </div> 
 
-  
