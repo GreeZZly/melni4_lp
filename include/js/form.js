@@ -81,6 +81,45 @@ $(document).ready(function (){
             }
         }
     });
+     $('#phone_form').validate({
+        rules:{
+            name_p:{
+                required: true,
+                minlength: 2,
+                maxlength: 16,
+            },
+            surname_p:{
+                required: true,
+                minlength: 2,
+                maxlength: 20
+            },
+            phone_p: {
+                required:true,
+                minlength: 6,
+                maxlength: 11,
+                digits: true   
+            }
+        },
+
+        messages: {
+            name_p:{
+                required: "Это поле обязательно для заполнения",
+                minlength: "Имя должно быть минимум 2 символа",
+                maxlength: "Максимальное число символов - 16",
+            },
+            surname_p:{
+                required: "Это поле обязательно для заполнения",
+                minlength: "Фамилия должно быть минимум 2 символа",
+                maxlength: "Максимальное число символов - 20",
+            },
+            phone_p:{
+                required: "Это поле обязательно для заполнения",
+                minlength: "Телефон должен быть минимум 6 символов",
+                maxlength: "Телефон должен быть максимум 11 символов",
+                digits: "Только цифры"
+            }
+        }
+    });
  
 	$('#reg_button_last').on('click', function(){
         
@@ -96,6 +135,12 @@ $(document).ready(function (){
     });
    
 
+    $('#phone_order_sbm_btn').on('click', function(){
+        // $('#phone_form').submit();
+        if($('#phone_form').valid()){
+            $('#phone_form').submit();
+        }
+    });
     $('#reg_form').resize(function(){
         var form_h = $('#reg_form').height()-275;
         $('.well').css({'height':form_h});

@@ -59,7 +59,7 @@ class Main extends CI_Controller {
 			$this->email->initialize($config);
 
 			$this->email->clear();
-		    $this->email->to('melnichenco70@mail.ru');
+		    $this->email->to('melnichenco70@mail.ru, semenzuev777@gmail.com');
 		    $this->email->from('info@upsale21.ru');
 		    $this->email->subject('Новая заявка!');
 		    $this->email->message("Привет!\nПоступила заявка от\nИмя: ".$data['name']."\nФамилия: ".$data['surname']."\nАдрес: ".$data['email']."\nТелефон: ".$data['phone']."");
@@ -94,7 +94,7 @@ class Main extends CI_Controller {
 			$this->email->initialize($config);
 
 			$this->email->clear();
-		    $this->email->to('melnichenco70@mail.ru');
+		    $this->email->to('melnichenco70@mail.ru, semenzuev777@gmail.com');
 		    $this->email->from('info@upsale21.ru');
 		    $this->email->subject('Скачали тест!');
 		    $this->email->message("Привет!\nТест скачал:\nИмя: ".$data['name']."\nАдрес: ".$data['email']."");
@@ -112,6 +112,41 @@ class Main extends CI_Controller {
 			$this->load->view('mel/formsuccess_download');
 			$this->load->view('mel/htmlfooter.html');
 		}
+	}
+
+	function phone_order(){
+		$this->load->helper(array('form', 'url'));
+		$this->load->library('form_validation');
+		$this->load->library('email');
+
+		$this->form_validation->set_rules('name_p', 'Имя', 'required|min_length[2]|max_length[16]');
+		$this->form_validation->set_rules('surname_p', 'Фамилия', 'min_length[2]|max_length[20]');
+		$this->form_validation->set_rules('phone_p', 'Телефон', 'required|numeric');
+		if ($this->form_validation->run() == FALSE)
+		{
+			$this->load->view('mel/htmlheader.html');
+			$this->load->view('mel/phone_order_php');
+			$this->load->view('mel/htmlfooter.html');
+		}
+		else {
+			$data = array('name' => $this->input->post('name_p'),
+							'surname' =>$this->input->post('surname_p'),
+							'phone' => $this->input->post('phone_p')
+				);
+			$config['mailtype'] = 'text';
+			$this->email->initialize($config);
+
+			$this->email->clear();
+		    $this->email->to('melnichenco70@mail.ru, semenzuev777@gmail.com');
+		    $this->email->from('info@upsale21.ru');
+		    $this->email->subject('Заказали звонок!!');
+		    $this->email->message("Привет!\nЗвонок заказал:\nИмя: ".$data['name']." ".$data['surname']."\nТелефон: ".$data['phone']."");
+		    $this->email->send();
+		   	}
+
+		   	$this->load->view('mel/htmlheader.html');
+			$this->load->view('mel/formsuccess_phone');
+			$this->load->view('mel/htmlfooter.html');
 	}
 
 }

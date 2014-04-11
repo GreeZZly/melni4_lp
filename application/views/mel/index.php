@@ -542,26 +542,27 @@
         <h3 id="myModalLabel">Введите свои данные</h3>
       </div>
       <div class="modal-body">
-         <form class="form-horizontal" id="phone_form">
+         <form class="form-horizontal" id="phone_form" action="/main/phone_order" method="POST">
              
                 <div class="input_form on_modal">
-                    <input type="text" id="name" placeholder="Введите Ваше имя" name="name">
+                    <input type="text" id="name" placeholder="Введите Ваше имя" name="name_p">
                 </div>
 
                <div class="input_form on_modal">
-                    <input type="text" id="surname" placeholder="Введите Вашу Фамилию" name="surname">
+                    <input type="text" id="surname" placeholder="Введите Вашу Фамилию" name="surname_p">
                 </div>
 
                 <div class="input_form on_modal">
-                   <input type="text" id="phone" placeholder="Введите Ваш номер телефон" name="phone">
+                   <input type="text" id="phone" placeholder="Введите Ваш номер телефон" name="phone_p">
                 </div>
            
             
-            </form>
+            
+        </form>
       </div>
       <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">Закрыть</button>
-        <button class="btn btn-primary on_modal_btn">Отправить контакты</button>
+        <button type="submit" class="btn btn-primary on_modal_btn" id="phone_order_sbm_btn">Отправить контакты</button>
+        <!-- <button class="btn" data-dismiss="modal" aria-hidden="true">Закрыть</button> -->
       </div>
     </div>
 
