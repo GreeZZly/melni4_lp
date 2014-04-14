@@ -33,7 +33,7 @@
 
        </div>
        <div class="span4 date_banner">
-          <p>Семинар, 17 апреля 2014 года</p> 
+          <p>Семинар состоится в 18.00 17 апреля 2014 года</p> 
        </div>
        <div class="span4">
        </div>
@@ -45,7 +45,7 @@
 <div class="orange_block use_shadow">
   <div class="container">
     <div class="row-fluid slogan2">
-       <p><h3>Хотите узнать уникальную &laquo;волшебную&raquo; формулу продаж?</h3></p>
+       <p><h3>Хотите узнать какое состояние вашего отдела продаж?</h3></p>
     </div>
     <div class="row-fluid"> 
     <div class="span7 video_span">
@@ -542,26 +542,27 @@
         <h3 id="myModalLabel">Введите свои данные</h3>
       </div>
       <div class="modal-body">
-         <form class="form-horizontal" id="phone_form">
+         <form class="form-horizontal" id="phone_form" action="/main/phone_order" method="POST">
              
                 <div class="input_form on_modal">
-                    <input type="text" id="name" placeholder="Введите Ваше имя" name="name">
+                    <input type="text" id="name" placeholder="Введите Ваше имя" name="name_p">
                 </div>
 
                <div class="input_form on_modal">
-                    <input type="text" id="surname" placeholder="Введите Вашу Фамилию" name="surname">
+                    <input type="text" id="surname" placeholder="Введите Вашу Фамилию" name="surname_p">
                 </div>
 
                 <div class="input_form on_modal">
-                   <input type="text" id="phone" placeholder="Введите Ваш номер телефон" name="phone">
+                   <input type="text" id="phone" placeholder="Введите Ваш номер телефон" name="phone_p">
                 </div>
            
             
-            </form>
+            
+        </form>
       </div>
       <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">Закрыть</button>
-        <button class="btn btn-primary on_modal_btn">Отправить контакты</button>
+        <button type="submit" class="btn btn-primary on_modal_btn" id="phone_order_sbm_btn">Отправить контакты</button>
+        <!-- <button class="btn" data-dismiss="modal" aria-hidden="true">Закрыть</button> -->
       </div>
     </div>
 
@@ -582,4 +583,32 @@
   
 </div> 
 </div> 
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter24652358 = new Ya.Metrika({id:24652358,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/24652358" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 
